@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">13CSCAssignment4</string>
+    <string name="your_journal_logs">Your Journal Logs</string>
+    <string name="search_journals">Search Journals</string>
+    <string name="what_are_you_grateful_for">What are you grateful for?</string>
+    <string name="type_more_here">Type more here...</string>
+</resources>
