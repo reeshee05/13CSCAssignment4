@@ -1,11 +1,14 @@
 package com.example.a13cscassignment4.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "notes")
-public class Note {
+public class Note implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -93,5 +96,11 @@ public class Note {
 
     public void setWeblink(String weblink) {
         this.weblink = weblink;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return title + " : " + dateTime;
     }
 }
