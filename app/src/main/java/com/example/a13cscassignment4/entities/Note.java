@@ -7,33 +7,44 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+// Serializing
 @Entity(tableName = "notes")
 public class Note implements Serializable {
 
+    // Primary Key
     @PrimaryKey(autoGenerate = true)
     private int id;
 
+    // Title
     @ColumnInfo(name = "title")
     private String title;
 
+    // Date
     @ColumnInfo(name = "date_time")
     private String dateTime;
 
+    // Subtitle
     @ColumnInfo(name = "subtitle")
     private String subtitle;
 
+    // Note Text
     @ColumnInfo(name = "note_text")
     private String note_text;
 
+    // Image Input
     @ColumnInfo(name = "image_path")
     private String imagePath;
 
+    // Colour
     @ColumnInfo(name = "color")
     private String color;
 
+    // Input for links
     @ColumnInfo(name = "web_link")
     private String weblink;
 
+    // The following lines of code reflect the previous
+    // Now they are getting serialized
     public int getId() {
         return id;
     }

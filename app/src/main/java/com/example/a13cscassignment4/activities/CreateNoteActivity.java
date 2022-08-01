@@ -25,6 +25,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     private EditText inputNoteTitle, inputNoteSubtitle, inputNoteText;
     private TextView textDateTime;
 
+    // This Sets Up the Create Notes UI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +43,13 @@ public class CreateNoteActivity extends AppCompatActivity {
         inputNoteText = findViewById(R.id.inputNote);
         textDateTime = findViewById(R.id.textDateTime);
 
+        // This displays the date
         textDateTime.setText(
                 new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm a", Locale.getDefault())
                         .format(new Date())
         );
 
+        // This saves the journal
         ImageView imageSave = findViewById(R.id.imageSave);
         imageSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +59,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         });
 
     }
-
+    // This is the error prevention for empty texts
     private void saveNote() {
         if(inputNoteTitle.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "Note title can't be empty", Toast.LENGTH_SHORT).show();
@@ -67,21 +70,25 @@ public class CreateNoteActivity extends AppCompatActivity {
             return;
         }
 
+        // This converts the text inputed into string
         final Note note  = new Note();
         note.setTitle(inputNoteTitle.getText().toString());
         note.setSubtitle(inputNoteSubtitle.getText().toString());
         note.setNote_text(inputNoteText.getText().toString());
         note.setDateTime(textDateTime.getText().toString());
 
+        // This is for getting the data into the database
         @SuppressLint("StaticFieldLeak")
         class SaveNoteTask extends AsyncTask<Void, Void, Void> {
 
+            // Inserting the note (data) into the database
             @Override
             protected Void doInBackground(Void... voids) {
                 NotesDatabase.getDatabase(getApplicationContext()).noteDao().insertNote(note);
                 return null;
             }
 
+            // Executes the commands
             @Override
             protected void onPostExecute(Void unused) {
                 super.onPostExecute(unused);

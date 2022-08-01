@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    // These are the colours of my application
     <color name="colorPrimary">#272727</color>
     <color name="colorPrimaryDark">#272727</color>
     <color name="colorAccent">#00E6D3</color>

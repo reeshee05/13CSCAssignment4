@@ -7,7 +7,11 @@
     android:layout_marginTop="@dimen/_12sdp"
     android:background="@drawable/background_note"
     android:orientation="vertical">
-    
+
+    // The Group above is the viewgroup that aligns everything in a
+    single direction
+
+    // Text Title of Item Container
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="match_parent"
@@ -21,6 +25,7 @@
         android:textSize="@dimen/_13ssp"
         />
 
+    // Text Subtitles of Item Container
     <TextView
         android:id="@+id/textSubtitle"
         android:layout_width="match_parent"
@@ -34,6 +39,7 @@
         android:textColor="@color/colorNoteSubtitleText"
         android:textSize="@dimen/_12ssp" />
 
+    // Date of Item Container
     <TextView
         android:id="@+id/textDateTime"
         android:layout_width="match_parent"

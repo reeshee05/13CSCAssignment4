@@ -9,11 +9,13 @@ import androidx.room.RoomDatabase;
 import com.example.a13cscassignment4.dao.NoteDao;
 import com.example.a13cscassignment4.entities.Note;
 
+// Notes Database
 @Database(entities = Note.class, version = 1, exportSchema = false)
 public abstract class NotesDatabase extends RoomDatabase {
 
     private static NotesDatabase notesDatabase;
 
+    // Only one thread can access the class at one time
     public static synchronized NotesDatabase getDatabase(Context context) {
         if(notesDatabase == null) {
             notesDatabase = Room.databaseBuilder(
